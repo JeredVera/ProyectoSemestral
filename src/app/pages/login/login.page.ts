@@ -17,4 +17,12 @@ export class LoginPage implements OnInit {
     this.router.navigate(['home']);
   }
 
+  register() {
+    this.router.navigate(['register']);
+  }
+
+  recuperar_pass() {
+    this.router.navigate(['recuperar-pass']);
+  }
+
 }
