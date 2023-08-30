@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Restrablece</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,4 +12,16 @@
     <h1>Restrablece tu Contraseña</h1>
   </div>
   <br>
+  
+  <ion-item>
+    <ion-input type="email" errorText="Invalid email"  label="Ingres tu Correo Electronico" labelPlacement="floating" placeholder="EJ: janoski@gmail.com"></ion-input>
+  </ion-item>
+
+  <div class="ion-activatable ripple-parent custom-parent centrado_arriba">
+    Buscar
+    <ion-ripple-effect></ion-ripple-effect>
+  </div>
+
 </ion-content>
+
+

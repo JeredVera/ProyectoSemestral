@@ -38,3 +38,45 @@
     justify-content: center;
     align-items: center;
 }
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  
+    height: 170px;
+    width: 400px;
+  }
+  
+  b {
+    width: 100%;
+  }
+  
+  .ripple-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: relative;
+    overflow: hidden;
+  
+    border: 1px solid #ddd;
+  
+    user-select: none;
+  
+    width: 70%;
+    height: 50px;
+    border-radius: 8px;
+    margin: 15%;
+  }
+  
+  .custom-parent {
+    color: rgb(72, 153, 219);
+  }
+  
+  .border {
+    border: 5px solid rgb(72, 153, 219);
+  }
