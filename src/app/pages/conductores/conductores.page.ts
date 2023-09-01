@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Conductor } from './conductores.model';
+import { ConductoresService } from 'src/app/services/conductores.service';
 
 @Component({
   selector: 'app-conductores',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConductoresPage implements OnInit {
 
-  constructor() { }
+  listaConductores: Conductor[] = [];
+
+  constructor(private router: Router, private conductoresService: ConductoresService) { }
 
   ngOnInit() {
+    this.listaConductores = this.conductoresService.getAll()
   }
+
+
 
 }

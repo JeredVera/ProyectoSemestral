@@ -13,7 +13,16 @@ const routes: Routes = [
   },
   {
     path: 'conductores',
-    loadChildren: () => import('./pages/conductores/conductores.module').then( m => m.ConductoresPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/conductores/conductores.module').then( m => m.ConductoresPageModule)
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./pages/conductores/detalle/detalle.module').then( m => m.DetallePageModule)
+      }
+    ]
   },
   {
     path: 'pasajeros',
@@ -26,7 +35,8 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },

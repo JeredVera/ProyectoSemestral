@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <img alt="Silhouette of mountains" src="{{ conductor.imagen }}" />
+    <ion-card-header>
+      <ion-card-title>{{ conductor.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ conductor.edad }} años</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ conductor.descripcion }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
