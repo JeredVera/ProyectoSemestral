@@ -26,7 +26,16 @@ const routes: Routes = [
   },
   {
     path: 'pasajeros',
-    loadChildren: () => import('./pages/pasajeros/pasajeros.module').then( m => m.PasajerosPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/pasajeros/pasajeros.module').then( m => m.PasajerosPageModule)
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./pages/pasajeros/detalle/detalle.module').then( m => m.DetallePageModule)
+      }
+    ]
   },
   {
     path: 'cargando',
@@ -47,10 +56,20 @@ const routes: Routes = [
   {
     path: 'recuperar-pass',
     loadChildren: () => import('./pages/recuperar-pass/recuperar-pass.module').then( m => m.RecuperarPassPageModule)
-  },  {
+  },
+  {
     path: 'cuenta',
     loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+  },
+  {
+    path: 'home-conductores',
+    loadChildren: () => import('./pages/home-conductores/home-conductores.module').then( m => m.HomeConductoresPageModule)
+  },  {
+    path: 'mapa-pasajero',
+    loadChildren: () => import('./pages/mapa-pasajero/mapa-pasajero.module').then( m => m.MapaPasajeroPageModule)
   }
+
+
 
 
 ];

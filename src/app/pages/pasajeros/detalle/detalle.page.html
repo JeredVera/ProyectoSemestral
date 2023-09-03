@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home-conductores"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <img alt="Silhouette of mountains" src="{{ pasajero.imagen }}" />
+    <ion-card-header>
+      <ion-card-title>{{ pasajero.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ pasajero.direccion }} </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-subtitle >{{ pasajero.edad }} años</ion-card-subtitle>
+      {{ pasajero.descripcion }}
+      <hr>
+      <ion-label>
+        <h2>Telefono</h2>
+        <p>{{ pasajero.telefono}}</p>
+      </ion-label>
+    </ion-card-content>
+    <ion-button shape="round" class="centrado" >Confirmar Viaje</ion-button>
+  </ion-card>
+</ion-content>

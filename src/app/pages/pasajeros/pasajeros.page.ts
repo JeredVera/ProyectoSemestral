@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pasajero } from './pasajeros.model';
+import { PasajerosService } from 'src/app/services/pasajeros.service';
 
 @Component({
   selector: 'app-pasajeros',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PasajerosPage implements OnInit {
 
-  constructor() { }
+  listaPasajeros: Pasajero[] = [];
+  constructor(private router: Router, private pasajerosService: PasajerosService) { }
 
   ngOnInit() {
+    this.listaPasajeros = this.pasajerosService.getAll()
   }
 
 }

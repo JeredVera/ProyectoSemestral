@@ -9,7 +9,6 @@ export class AppComponent {
     { title: 'Cuenta', url: 'cuenta', icon: 'person' },
     { title: 'Privacidad y Seguridad', url: '/folder/outbox', icon: 'lock-closed' },
     { title: 'Mensajes', url: '/folder/favorites', icon: 'card' },
-    { title: 'Conductores', url: 'conductores', icon: 'car' },
     { title: 'Codigo QR', url: '#', icon: 'qr-code' },
     { title: 'Terminos y condiciones', url: '/folder/trash', icon: 'warning' },
     { title: 'Cerrar sesion', url: 'login', icon: 'log-out' },

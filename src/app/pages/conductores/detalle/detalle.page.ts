@@ -12,15 +12,19 @@ export class DetallePage implements OnInit {
 
   conductor!: Conductor;
 
-  constructor(private conductoresService: ConductoresService, private router: Router, private activateRoute: ActivatedRoute, ) { }
+  constructor(private conductoresService: ConductoresService, private router: Router, private activatedRoute: ActivatedRoute, ) { }
 
   ngOnInit() {
-    this.activateRoute.paramMap.subscribe(param =>{
+    this.activatedRoute.paramMap.subscribe(param =>{
       const aux = param.get('id')
       if(aux){
         this.conductor = this.conductoresService.getConductor(aux)
       }
     })
+  }
+
+  mapa_pasajeros(){
+    this.router.navigate(['mapa-pasajero'])
   }
 
 }
