@@ -87,6 +87,10 @@ const routes: Routes = [
   {
     path: 'terminos',
     loadChildren: () => import('./pages/terminos/terminos.module').then( m => m.TerminosPageModule)
+  },
+  {
+    path: 'conductores-favoritos',
+    loadChildren: () => import('./pages/conductores-favoritos/conductores-favoritos.module').then( m => m.ConductoresFavoritosPageModule)
   }
 
 

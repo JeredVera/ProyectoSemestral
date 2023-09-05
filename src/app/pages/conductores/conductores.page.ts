@@ -18,6 +18,7 @@ export class ConductoresPage implements OnInit {
     this.listaConductores = this.conductoresService.getAll()
   }
 
-
-
+  conductores_favoritos(){
+    this.router.navigate(['conductores-favoritos'])
+  }
 }
