@@ -17,4 +17,11 @@ export class HomePage implements OnInit {
     this.router.navigate(['conductores'])
   }
 
+  home_conductores(){
+    this.router.navigate(['home-conductores'])
+  }
+
+  codigo_qr(){
+    this.router.navigate(['codigo-qr'])
+  }
 }

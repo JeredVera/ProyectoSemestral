@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Cuenta', url: 'cuenta', icon: 'person' },
-    { title: 'Privacidad y Seguridad', url: '/folder/outbox', icon: 'lock-closed' },
-    { title: 'Mensajes', url: '/folder/favorites', icon: 'card' },
-    { title: 'Codigo QR', url: '#', icon: 'qr-code' },
-    { title: 'Terminos y condiciones', url: '/folder/trash', icon: 'warning' },
+    { title: 'Privacidad y Seguridad', url: 'privacidad', icon: 'lock-closed' },
+    { title: 'Mensajes', url: 'message', icon: 'card' },
+    { title: 'Codigo QR', url: 'codigo-qr', icon: 'qr-code' },
+    { title: 'Terminos y condiciones', url: 'terminos', icon: 'warning' },
     { title: 'Cerrar sesion', url: 'login', icon: 'log-out' },
   ];
   public labels = [''];

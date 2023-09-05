@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons> 
+   </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <div class="container">
+
+ <h3>Paga mas facil con codigo QR</h3>
+ <ion-button (click)="confirmar_qr()"  shape="round" class="centrado" >Generar codigo</ion-button>
+<p>Con esta opcion te sera mas facil pagar al conductor que te transporte</p>
+</div>
+
+</ion-content>

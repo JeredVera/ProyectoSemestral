@@ -16,5 +16,33 @@ export class PasajerosPage implements OnInit {
   ngOnInit() {
     this.listaPasajeros = this.pasajerosService.getAll()
   }
+  listar(){
+    this.listaPasajeros = this.pasajerosService.getAll()
+  }
 
-}
+  addPasajeros(){
+    this.router.navigate(['pasajeros/agregar'])
+  }
+
+  handlerRefresh(event: any){
+    setTimeout(()=> {
+      event.target.complete();
+    }, 2000);
+
+  }
+
+  handleReorder(ev: CustomEvent<any>) {
+    ev.detail.complete();
+  }
+
+  buscarPasajero(event: any){
+    const texto = event.target.value;
+    if( texto && texto.trim() != ''){
+      this.listaPasajeros = this.listaPasajeros.filter((aux: any) =>{
+        return (aux.nombre.toLowerCase().indexOf(texto.toLowerCase()) >-1)
+      })
+
+      }
+    }
+  }
+

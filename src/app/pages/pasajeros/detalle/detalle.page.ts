@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pasajero } from '../pasajeros.model';
 import { PasajerosService } from 'src/app/services/pasajeros.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-detalle',
@@ -12,7 +13,7 @@ export class DetallePage implements OnInit {
 
   pasajero!: Pasajero;
 
-  constructor(private pasajerosService: PasajerosService, private router: Router, private activatedRoute: ActivatedRoute ) { }
+  constructor(private alertController: AlertController,private toastController: ToastController,private pasajerosService: PasajerosService, private router: Router, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(param =>{
@@ -23,4 +24,42 @@ export class DetallePage implements OnInit {
     })
   }
 
+  async mensajeToast(mensaje: string){
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 200,
+      position: 'bottom'
+
+    });
+    toast.present()
+  }
+
+   async deletePasajero(){
+  const alerta = await this.toastController.create({
+    header: 'Eliminar',
+    message: 'estas seguro de quieres eliminar al pasajero?',
+    buttons: [{
+      text: 'Eliminar',
+      handler: () => {
+        if(this.pasajero && this.pasajero.id !== undefined){
+          this.pasajerosService.deletePasajero(this.pasajero.id);
+          this.router.navigate(['/pasajeros']);
+          this.mensajeToast("pasajero eliminado")
+        }else{
+           
+        }
+      }
+    },
+    {
+      text: 'cancelar',
+      handler: () => {
+        this.mensajeToast("accion cancelada")
+      }
+    }
+
+    ]
+  });
+await alerta.present();
+let resultado = await alerta.onDidDismiss;
+    }
 }

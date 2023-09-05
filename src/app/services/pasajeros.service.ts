@@ -52,4 +52,20 @@ export class PasajerosService {
       })
     }
   }
+
+  //metodo que agrega un pasajero
+  addPasajero(nombre: string, imagen: string, edad: string, descripcion: string, telefono:string, direccion: string){
+    this.pasajeros.push({
+      nombre, imagen, edad, descripcion, telefono, direccion, id: this.pasajeros.length + 1 + ""
+    })
+  }
+
+
+  //metodo que elimina un pasajero
+  deletePasajero(id: string){
+    this.pasajeros = this.pasajeros.filter(aux => {
+      return aux.id !== id
+    })
+  }
+
 }
