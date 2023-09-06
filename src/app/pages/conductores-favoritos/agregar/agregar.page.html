@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #nombre type="text" label="Nombre" labelPlacement="floating" placeholder="ej: juan"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #imagen type="imagen" label="imagen" labelPlacement="floating" placeholder="https://"></ion-input>
+
+      </ion-item>
+      <ion-item>
+        <ion-input #edad type="text" label="edad" labelPlacement="floating" placeholder="20"></ion-input>
+       
+      </ion-item>
+      <ion-item>
+        <ion-input #descripcion type="text" label="descripcion" labelPlacement="floating" placeholder="juanito "></ion-input>
+        
+      </ion-item>
+      <ion-buttons (click)="addConductor(nombre,imagen,edad,descripcion)"color="primary">Agregar</ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

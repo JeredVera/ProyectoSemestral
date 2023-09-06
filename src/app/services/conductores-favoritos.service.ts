@@ -39,4 +39,20 @@ export class ConductoresFavoritosService {
       })
     }
   }
+  //metodo que agrega conductor
+  agregarConductor(nombre: string, imagen: string, edad: string, descripcion: string){
+    this.conductores_favoritos.push({
+      nombre, imagen, edad, descripcion, id: this.conductores_favoritos.length + 1 + ""
+    })
+  }
+
+    //metodo que elimina al conductor
+
+    deleteConductores(id: string){
+      this.conductores_favoritos = this.conductores_favoritos.filter(aux => {
+        return aux.id !== id
+      })
+
+    }
+
 }

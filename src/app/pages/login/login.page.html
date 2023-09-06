@@ -4,38 +4,42 @@
   </ion-toolbar>
 </ion-header>
   
-<ion-content >
+<ion-content [fullscreen]="true">
 
   <ion-card color="black">
-  <ion-card-header>
-    <ion-card-title>Inicio Sesion</ion-card-title>
-  </ion-card-header>
-
-  <br>
-  <br>
-  <br>
-
-  <ion-item>
-    <ion-input type="string" errorText="Invalid Nombre Usuario" ngModel label="Nombre de Usuario" labelPlacement="floating" placeholder="EJ: Janoski"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input type="password" label="Contraseña" labelPlacement="floating" placeholder="EJ: Janoski123"></ion-input>
-  </ion-item>
+    <ion-card-header>
+      <ion-card-title>Inicio Sesion</ion-card-title>
+    </ion-card-header>
   
-  <br>
-  <br>
-  <br>
+    <br>
+    <br>
+    <br>
   
-  <ion-button (click)="login()" shape="round" class="centrado" >Ingresar</ion-button>
-
-  <br>
-
-  <div class="centrado">¿No Tienes Cuenta?<a (click)="register()">Registrate</a></div>
-
-  <br>
-
-  <div class="centrado">¿Olvidaste Tu Contraseña?<a (click)="recuperar_pass()">Recuperar</a></div>
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      <div style="color: red;" class="error-message">{{ emailError }}</div>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      <div style="color: red;" class="error-message">{{ passwordError }}</div>
+    </ion-item>
+    
+    <br>
+    <br>
+    <br>
   
-</ion-card>
+    <ion-button (click)="login()" shape="round" class="centrado" >Ingresar</ion-button>
+  
+    <br>
+  
+    <div class="centrado">¿No Tienes Cuenta?<a (click)="register()">Registrate</a></div>
+  
+    <br>
+  
+    <div class="centrado">¿Olvidaste Tu Contraseña?<a (click)="recuperar_pass()">Recuperar</a></div>
+    
+  </ion-card>
 
 </ion-content>

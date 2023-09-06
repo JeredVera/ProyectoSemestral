@@ -18,4 +18,21 @@ export class ConductoresFavoritosPage implements OnInit {
     this.listaConductoresFavoritos = this.conductoresfavoritosService.getAll()
   }
 
+  listar(){
+    this.listaConductoresFavoritos = this.conductoresfavoritosService.getAll()
+  }
+
+  addConductores(){
+    this.router.navigate(['conductores-favoritos/agregar'])
+  }
+
+   buscarConductor(event: any){
+    const texto = event.target.value;
+    if( texto && texto.trim() != ''){
+      this.listaConductoresFavoritos = this.listaConductoresFavoritos.filter((aux: any) =>{
+        return (aux.nombre.toLowerCase().indexOf(texto.toLowerCase()) >-1)
+      })
+
+      }
+    }
 }

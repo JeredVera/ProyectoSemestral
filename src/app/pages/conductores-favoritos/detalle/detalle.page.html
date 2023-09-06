@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon (click)="deleteConductor()" name="trash-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <img alt="Silhouette of mountains" src="{{ conductores_favoritos.imagen }}" />
+    <ion-card-header>
+      <ion-card-title>{{ conductores_favoritos.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ conductores_favoritos.edad }} años</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ conductores_favoritos.descripcion }}
+    </ion-card-content>
+    <ion-button (click)="mapa_pasajeros()" shape="round" class="centrado" >Pedir Uber</ion-button>
+  </ion-card>
+</ion-content>

@@ -64,7 +64,8 @@ const routes: Routes = [
   {
     path: 'home-conductores',
     loadChildren: () => import('./pages/home-conductores/home-conductores.module').then( m => m.HomeConductoresPageModule)
-  },  {
+  },
+  {
     path: 'mapa-pasajero',
     loadChildren: () => import('./pages/mapa-pasajero/mapa-pasajero.module').then( m => m.MapaPasajeroPageModule)
   },
@@ -90,7 +91,16 @@ const routes: Routes = [
   },
   {
     path: 'conductores-favoritos',
-    loadChildren: () => import('./pages/conductores-favoritos/conductores-favoritos.module').then( m => m.ConductoresFavoritosPageModule)
+    children:[
+      {
+        path: '',
+        loadChildren: () => import('./pages/conductores-favoritos/conductores-favoritos.module').then( m => m.ConductoresFavoritosPageModule),
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./pages/conductores-favoritos/detalle/detalle.module').then( m => m.DetallePageModule)
+      }
+    ]
   }
 
 

@@ -7,7 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: ConductoresFavoritosPage
+  },  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./agregar/agregar.module').then( m => m.AgregarPageModule)
   }
+
 ];
 
 @NgModule({
