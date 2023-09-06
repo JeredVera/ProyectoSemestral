@@ -101,7 +101,11 @@ const routes: Routes = [
         loadChildren: () => import('./pages/conductores-favoritos/detalle/detalle.module').then( m => m.DetallePageModule)
       }
     ]
+  },  {
+    path: 'leer-qr',
+    loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQrPageModule)
   }
+
 
 
 

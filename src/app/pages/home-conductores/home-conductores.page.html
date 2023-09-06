@@ -9,7 +9,7 @@
 
 <ion-content>
   <div class="centrado_arriba" >
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido Conductor</h1>
   </div>
   <br>
 
@@ -31,6 +31,17 @@
       Ver mas
       <ion-ripple-effect></ion-ripple-effect>
     </div>
+  </div>
+
+  <br>
+
+  <div class="container  border">
+    <div class="centrado_arriba">
+      <h4>Cliente Frecuentes</h4>
+    </div>
+    <app-card-cliente [mostrarHeader]="true" [mostrarBoton]="false" imagen="https://caracol.com.co/resizer/xE2xxy1zy4o2Ow8O4rzKMHnT2o4=/650x488/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/JXFOEJKH7BITNDYTJXS2UQ3F2I.jpg" direccion="Eyzaguirre 0234" nombre="Vicente" edad="18" descripcion="Preparador Fisico" telefono="+56 9 87459851"></app-card-cliente>
+    <br>
+    <app-card-cliente [mostrarHeader]="true" [mostrarBoton]="false" imagen="https://www.semana.com/resizer/NLCC7OsQwKvEAjw9ueaK23JQ5mI=/arc-anglerfish-arc2-prod-semana/public/CV2NB24T2NB3NBNFIFZT4T2HFU.jpg" direccion="Santa Rosa 0986" nombre="Fransisca" edad="24" descripcion="Tecnica en Enfermaria" telefono="+56 9 84512635"></app-card-cliente>
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="start">

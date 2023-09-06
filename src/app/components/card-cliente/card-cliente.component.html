@@ -1,0 +1,18 @@
+<ion-card>
+  <img alt="Silhouette of mountains" src="{{ imagen }}" />
+  <ion-card-header *ngIf="mostrarHeader">
+    <ion-card-title>{{ nombre }}</ion-card-title>
+    <ion-card-subtitle>{{ direccion }} </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-card-subtitle >{{ edad }} años</ion-card-subtitle>
+    {{ descripcion }}
+    <hr>
+    <ion-label>
+      <h2>Telefono</h2>
+      <p>{{ telefono}}</p>
+    </ion-label>
+  </ion-card-content>
+  <ion-button *ngIf="mostrarBoton" shape="round" class="centrado" >Confirmar Viaje</ion-button>
+</ion-card>
