@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Mensajes', url: 'message', icon: 'card' },
     { title: 'Codigo QR', url: 'codigo-qr', icon: 'qr-code' },
     { title: 'Leer Codigo QR', url: 'leer-qr', icon: 'qr-code' },
+    { title: 'API-Clientes Extraños', url: 'clientes-extranos', icon: 'help' },
     { title: 'Terminos y condiciones', url: 'terminos', icon: 'warning' },
     { title: 'Cerrar sesion', url: 'login', icon: 'log-out' },
   ];

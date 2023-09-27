@@ -104,6 +104,10 @@ const routes: Routes = [
   },  {
     path: 'leer-qr',
     loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQrPageModule)
+  },
+  {
+    path: 'clientes-extranos',
+    loadChildren: () => import('./pages/clientes-extranos/clientes-extranos.module').then( m => m.ClientesExtranosPageModule)
   }
 
 

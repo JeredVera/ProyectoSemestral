@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clientes Extraños</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+  <h4>Lista Clientes Extraños</h4>
+  <ion-list *ngFor="let aux of rickandmorty">
+    <ion-item>
+      <ion-card>
+        <img src="{{ aux.image }}" alt="">
+        <ion-card-header>
+          <ion-card-title>{{ aux.name }}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
