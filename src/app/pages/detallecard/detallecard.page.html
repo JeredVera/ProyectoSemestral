@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle Cliente extraño</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="rickandmorty">
+    <img src="{{rickandmorty.image}}" alt="">
+    <ion-card-header>
+      <ion-card-title>{{rickandmorty.name}}</ion-card-title>
+    </ion-card-header>
+   
+  </ion-card>
+</ion-content>

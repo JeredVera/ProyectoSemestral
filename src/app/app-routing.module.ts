@@ -101,14 +101,20 @@ const routes: Routes = [
         loadChildren: () => import('./pages/conductores-favoritos/detalle/detalle.module').then( m => m.DetallePageModule)
       }
     ]
-  },  {
+  },
+  {
     path: 'leer-qr',
     loadChildren: () => import('./pages/leer-qr/leer-qr.module').then( m => m.LeerQrPageModule)
   },
   {
     path: 'clientes-extranos',
     loadChildren: () => import('./pages/clientes-extranos/clientes-extranos.module').then( m => m.ClientesExtranosPageModule)
+  },
+  {
+    path: 'detallecard/:id',
+    loadChildren: () => import('./pages/detallecard/detallecard.module').then( m => m.DetallecardPageModule)
   }
+
 
 
 
