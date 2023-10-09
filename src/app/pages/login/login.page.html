@@ -10,29 +10,32 @@
     <ion-card-header>
       <ion-card-title>Inicio Sesion</ion-card-title>
     </ion-card-header>
+
+    <ion-card-content [formGroup]="loginForm">
+      <br>
+      <br>
   
-    <br>
-    <br>
-    <br>
+      <ion-item>
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label position="floating">Nombre de Usuario</ion-label>
+        <ion-input type="email" [(ngModel)]="emailValue" formControlName="email" name="email" required></ion-input>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')"> El Correo Es Requerido</ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')"> El Correo es Invalido</ion-text>
+
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="key-outline"></ion-icon>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="passValue" formControlName="password" name="password" required></ion-input>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')"> La Contraseña Es Requerida</ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minLength')"> La Contraseña Debe Contener Al Menos 6 Caracteres</ion-text>
+      </ion-item>
+
+      <br>
+      <br>
+    </ion-card-content>
   
-    <ion-item>
-      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-      <ion-label position="floating">Nombre de Usuario</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-      <div style="color: red;" class="error-message">{{ emailError }}</div>
-    </ion-item>
-    <ion-item>
-      <ion-icon slot="start" name="key-outline"></ion-icon>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-      <div style="color: red;" class="error-message">{{ passwordError }}</div>
-    </ion-item>
-    
-    <br>
-    <br>
-    <br>
-  
-    <ion-button (click)="login()" shape="round" class="centrado" >Ingresar</ion-button>
+    <ion-button [disabled]="!loginForm.valid" (click)="login()" shape="round" class="centrado" >Ingresar</ion-button>
   
     <br>
   
