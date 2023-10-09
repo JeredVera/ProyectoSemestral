@@ -4,9 +4,6 @@
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Drivers</ion-title>
-    <ion-buttons slot="end">
-      <ion-icon name="refresh" ></ion-icon>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +11,7 @@
   <ion-list>
     <ion-item *ngFor="let aux of listaConductores" [routerLink]="['/conductores/', aux.id]">
       <ion-avatar slot="start">
-        <ion-img [src]="aux.imagen"></ion-img>
+        <ion-img [src]=""></ion-img>
       </ion-avatar>
       <ion-label>{{ aux.nombre }}</ion-label>
       <ion-icon slot="end" name="star-outline"></ion-icon>
