@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-terminos',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TerminosPage implements OnInit {
 
-  constructor() { }
+  check: boolean = false ;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  login() {
+    if(this.check === true){
+      this.router.navigate(['login'])
+    } else {
+      console.log('Debe Aceptar Terminos Para Iniciar Sesion')
+    }
+  }
 }

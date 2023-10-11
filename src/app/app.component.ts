@@ -32,7 +32,7 @@ export class AppComponent {
   constructor(private router: Router, menuController: MenuController) {}
 
   mostrarMenu(){
-    return this.router.url !== '/login'; // NO SSE VA A MOSTRAR EN EL LOGIN 
+    return this.router.url !== '/login'; // NO SE VA A MOSTRAR EN EL LOGIN 
   }
 
   mostrarMenuApi(){
