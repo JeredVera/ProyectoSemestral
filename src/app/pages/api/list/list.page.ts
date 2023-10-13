@@ -14,14 +14,20 @@ export class ListPage implements OnInit {
   constructor(private router: Router, private conductoresApi: ConductoresService) { }
 
   ngOnInit() {
-    this.conductoresApi.listConductores().subscribe((resp) =>{
-      //console.log(resp)
-      this.listaConductores = resp
-    })
+    this.listar();
+  }
+
+  ionViewWillEnter(){
+    this.listar();
   }
 
   listar(){
-
+    this.conductoresApi.listConductores().subscribe((resp) =>{
+      //console.log(resp)
+      let aux = JSON.stringify(resp)
+      this.listaConductores = JSON.parse(aux)
+      console.log(this.listaConductores)
+    }) 
   }
 
   buscarConductor(event: any) {
@@ -30,5 +36,15 @@ export class ListPage implements OnInit {
 
   conductores_favoritos(){
     this.router.navigate(['conductores-favoritos'])
+  }
+  
+  handlerRefresh(event: any){
+    setTimeout(()=> {
+      event.target.complete();
+    }, 2000);
+
+  }
+  addConductor(){
+    this.router.navigate(['/apiadd']);
   }
 }
