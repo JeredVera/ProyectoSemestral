@@ -137,7 +137,14 @@ const routes: Routes = [
   {
     path: 'apilist',
     loadChildren: () => import('./pages/api/list/list.module').then( m => m.ListPageModule)
-  }
+  },
+  {
+    path: 'clientesrandom',
+    loadChildren: () => import('./pages/clientesrandom/clientesrandom.module').then( m => m.ClientesrandomPageModule)
+  },
+
+  
+
 
 
 

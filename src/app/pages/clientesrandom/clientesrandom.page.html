@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Clientes Extraños</ion-title>
+    <ion-title>Clientes Random</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="">
-  <h4>Lista Clientes Extraños</h4>
-  <ion-list *ngFor="let aux of rickandmorty">
+  <h4>Lista Clientes Random</h4>
+  <ion-list *ngFor="let aux of digimones">
     <ion-item>
       <ion-card [routerLink]="'/detallecard/'+aux.id">
         <img src="{{ aux.image }}" alt="">
@@ -17,8 +17,6 @@
     </ion-item>
   </ion-list>
   <ion-button (click)="cargarSiguientePagina()">Mostrar mas</ion-button>
-  <br>
-  <ion-button (click)="cargarAnteriorPagina()">Mostrar menos</ion-button>
 
   <br><br><br><br><br><br><br><br><br>
 </ion-content>

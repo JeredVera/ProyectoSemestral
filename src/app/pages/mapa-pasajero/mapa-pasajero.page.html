@@ -1,20 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Map</ion-title>
+    <ion-title>
+      Access Location
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://css-tianguis.com/wp-content/uploads/2020/03/google-maps-links.png" />
-    <ion-card-header>
-      <ion-card-title>Tu Ubicacion: DuocUC sede Puente Alto</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-    <p class="margen_pequeño">Tu viaje comenzara en 5 min.</p>
-    <p class="margen_pequeño">Su destino es Bajos de Mena, Puente Alto</p>
-  </ion-card>
+  <div id="map"></div>
 </ion-content>

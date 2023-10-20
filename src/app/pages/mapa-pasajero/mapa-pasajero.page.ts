@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import * as L from "leaflet";
 
 @Component({
-  selector: 'app-mapa-pasajero',
+  selector: './mapa-pasajero',
   templateUrl: './mapa-pasajero.page.html',
   styleUrls: ['./mapa-pasajero.page.scss'],
 })
-export class MapaPasajeroPage implements OnInit {
+export class MapaPasajero {
+  
+  map?: L.Map;
 
-  constructor() { }
+  constructor(){}
 
-  ngOnInit() {
+  ngOnInti(){
+    this.map = L.map('map',{
+      center: [ 25.3791924,55.4765436 ],
+      zoom: 15,
+      renderer: L.canvas()
+    })
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap',
+    }).addTo(this.map)
   }
 
 }
