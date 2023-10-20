@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { IConductor } from 'src/app/interfaces/iconductor';
 import { ConductoresService } from 'src/app/services/api/conductores.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -22,9 +23,29 @@ export class AddPage implements OnInit {
   ngOnInit() {
 
   }
-  addConductor(){
+
+  addConductor(){  
     this.apiServices.addConductores(this.conductor).subscribe()
-    this.router.navigate(['/apilist']);
+    this.router.navigate(['/apilist']);  
+    this.MensajeToast();
   }
 
+  MensajeToast(){
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Conductor Agregado'
+    })
+  }
 }

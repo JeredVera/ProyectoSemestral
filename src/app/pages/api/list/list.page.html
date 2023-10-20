@@ -23,9 +23,9 @@
   <br>
   <ion-button class="centrado_arriba" (click)="conductores_favoritos()" shape="round">conductores preferidos</ion-button>
 
-  <ion-fab>
-    <ion-fab-button>
-      <ion-icon (click)="addConductor()" name="add"></ion-icon>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="addConductor()">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

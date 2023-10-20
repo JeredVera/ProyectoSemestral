@@ -16,4 +16,5 @@ export class CodigoQrPage implements OnInit {
   confirmar_qr() {
     this.router.navigate(['confirmar-qr']);
   }
+
 }
