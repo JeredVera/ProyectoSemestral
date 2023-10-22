@@ -9,26 +9,26 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ConductoresService {
-
+  apiURL = "https://jsonserver-rduh.onrender.com";
   constructor(private httpClient: HttpClient) { }
 
   listConductores(): Observable<IConductores>{
-    return this.httpClient.get<IConductores>(`${environment.apiURL}/conductores`);
+    return this.httpClient.get<IConductores>(`${this.apiURL}/conductores`);
   }
 
   addConductores(conductor: IConductor): Observable<IConductor>{
-    return this.httpClient.post<IConductor>(`${environment.apiURL}/conductores`, conductor);
+    return this.httpClient.post<IConductor>(`${this.apiURL}/conductores`, conductor);
   }
 
   getConductores(id: Number): Observable<IConductores>{
-    return this.httpClient.get<IConductores>(`${environment.apiURL}/conductores/?id=${id}`);
+    return this.httpClient.get<IConductores>(`${this.apiURL}/conductores/?id=${id}`);
   }
 
   updateConductores(conductor: any): Observable<IConductores>{
-    return this.httpClient.put<IConductores>(`${environment.apiURL}/conductores/${conductor.id}`, conductor);
+    return this.httpClient.put<IConductores>(`${this.apiURL}/conductores/${conductor.id}`, conductor);
   }
 
   deleteConductores(conductor: any): Observable<IConductores>{
-    return this.httpClient.delete<IConductores>(`${environment.apiURL}/conductores/${conductor.id}`);
+    return this.httpClient.delete<IConductores>(`${this.apiURL}/conductores/${conductor.id}`);
   }
 }
