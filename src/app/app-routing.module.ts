@@ -141,7 +141,11 @@ const routes: Routes = [
   {
     path: 'clientesrandom',
     loadChildren: () => import('./pages/clientesrandom/clientesrandom.module').then( m => m.ClientesrandomPageModule)
+  },  {
+    path: 'mapa',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
+
 
   
 
