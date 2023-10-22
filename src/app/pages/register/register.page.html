@@ -26,12 +26,29 @@
       <ion-input type="password" label="Repetir Contraseña" labelPlacement="floating" placeholder="EJ: Janoski123"></ion-input>
     </ion-item>
 
-    <div class="ion-activatable ripple-parent custom-parent centrado_arriba">
+    <div (click)="obtenerYEnviarUsuario()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
       Registrarse
       <ion-ripple-effect></ion-ripple-effect>
     </div>
 
     <div class="centrado">¿Ya Tienes Cuenta?<a (click)="login()">Inicia Sesion</a></div>
+
+    <table *ngIf="Usuarios.length > 0">
+      <thead>
+        <tr>
+          <th>Nombre de Usuario</th>
+          <th>Email</th>
+          <th>Contraseña</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of Usuarios">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+        </tr>
+      </tbody>
+    </table>
 
   </div>
   
