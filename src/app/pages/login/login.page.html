@@ -10,43 +10,23 @@
     <ion-card-header>
       <ion-card-title>Inicio Sesion</ion-card-title>
     </ion-card-header>
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header" color="light">
-          <ion-label>First Accordion</ion-label>
+
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
         </ion-item>
-        <div class="ion-padding" slot="content">First Content</div>
-      </ion-accordion>
+    
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+    
+        <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+      </form>
+    </ion-card-content> 
   
-    </ion-accordion-group>
-
-
-
-    <ion-card-content [formGroup]="loginForm">
-      <br>
-      <br>
-  
-      <ion-item>
-        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        <ion-label position="floating">Nombre de Usuario</ion-label>
-        <ion-input type="email" [(ngModel)]="emailValue" formControlName="email" name="email" required></ion-input>
-        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')"> El Correo Es Requerido</ion-text>
-        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')"> El Correo es Invalido</ion-text>
-
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" name="key-outline"></ion-icon>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="passValue" formControlName="password" name="password" required></ion-input>
-        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')"> La Contraseña Es Requerida</ion-text>
-        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minLength')"> La Contraseña Debe Contener Al Menos 6 Caracteres</ion-text>
-      </ion-item>
-
-      <br>
-      <br>
-    </ion-card-content>
-  
-    <ion-button [disabled]="!loginForm.valid" (click)="login()" shape="round" class="centrado" >Ingresar</ion-button>
   
     <br>
   

@@ -10,7 +10,16 @@ import { IClientes } from 'src/app/interfaces/iclientes';
 export class ClienteService {
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
+  transferUsersToRenderAPI() {
+    const randomUserUrl = 'https://randomuser.me/api/?results=10';
+    this.http.get(randomUserUrl).subscribe((randomUsers: any) => {
+      const renderApiUrl = 'https://jsonserver-ttvf.onrender.com/clientes';
+      this.http.post(renderApiUrl, randomUsers.results).subscribe(response => {
+        console.log('Usuarios transferidos a tu API en Render:', response);
+      });
+    });
+  }
   
 }

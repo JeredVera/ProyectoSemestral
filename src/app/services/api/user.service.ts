@@ -13,16 +13,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerUsuario(): Observable<IUsuario> {
-    return this.http.get<IUsuario>('https://randomuser.me/api');
-  }
-
-  enviarUsuario(usuario: IUsuario): Observable<any> {
-    this.Usuarios.push(usuario); // Agrega el usuario a la lista local
-    return this.http.post('https://jsonserver-ttvf.onrender.com/usuarios', usuario);
-  }
-
-  getUsers(): IUsuario[] {
-    return this.Usuarios;
+  transferUsersToRenderAPI() {
+    const randomUserUrl = 'https://randomuser.me/api/?results=10';
+    this.http.get(randomUserUrl).subscribe((randomUsers: any) => {
+      const renderApiUrl = 'https://jsonserver-ttvf.onrender.com/usuarios';
+      this.http.post(renderApiUrl, randomUsers.results).subscribe(response => {
+        console.log('Usuarios transferidos a tu API en Render:', response);
+      });
+    });
   }
 }
