@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './clientesrandom.page.html',
   styleUrls: ['./clientesrandom.page.scss'],
 })
-export class ClientesRandomPage implements OnInit {
+export class ClientesrandomPage implements OnInit {
 
   digimones: any[] = [];  
 

@@ -23,8 +23,8 @@ export class DetallePage implements OnInit {
     })
   }
 
-  mapa_pasajeros(){
-    this.router.navigate(['mapa-pasajero'])
+  llamar(){
+    this.router.navigate(['/mapa'])
   }
 
 }

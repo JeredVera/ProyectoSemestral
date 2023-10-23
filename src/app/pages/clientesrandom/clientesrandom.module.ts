@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ClientesrandomPageRoutingModule } from './clientesrandom-routing.module';
+import { ClientesrandomPageRoutingModule} from './clientesrandom-routing.module';
 
 import { ClientesrandomPage } from './clientesrandom.page';
 

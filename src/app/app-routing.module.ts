@@ -67,7 +67,7 @@ const routes: Routes = [
   },
   {
     path: 'mapa-pasajero',
-    loadChildren: () => import('./pages/mapa-pasajero/mapa-pasajero.module').then( m => m.MapaPasajeroPageModule)
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
     path: 'codigo-qr',
@@ -141,7 +141,8 @@ const routes: Routes = [
   {
     path: 'clientesrandom',
     loadChildren: () => import('./pages/clientesrandom/clientesrandom.module').then( m => m.ClientesrandomPageModule)
-  },  {
+  },
+  {
     path: 'mapa',
     loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
