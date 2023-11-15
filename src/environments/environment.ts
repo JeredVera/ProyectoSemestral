@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  apiURL: "http://localhost:3000"
+  apiURL: "http://localhost:3000",
+  firebaseConfig : {
+    apiKey: "AIzaSyChP6szQxIIAQ5rn_F9K0LiLfuhUxp7rkQ",
+    authDomain: "tellevoapp-ce4d9.firebaseapp.com",
+    projectId: "tellevoapp-ce4d9",
+    storageBucket: "tellevoapp-ce4d9.appspot.com",
+    messagingSenderId: "1041655357546",
+    appId: "1:1041655357546:web:3dcb40d47d2abffc0faa13",
+    measurementId: "G-LVRWYJ17QL"
+  }
 };
 
 /*

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IConductor } from 'src/app/interfaces/iconductor';
 import { ConductoresService } from 'src/app/services/api/conductores.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,38 +11,49 @@ import Swal from 'sweetalert2';
   styleUrls: ['./update.page.scss'],
 })
 export class UpdatePage implements OnInit {
-  conductor = {
-    id: 0,
-    nombre: 'test',
-    genero: 'test'
-  }
-
-
-
-  constructor(private apiServices: ConductoresService, private router: Router) { }
+  
+  conductor!: IConductor;
+  
+  constructor(
+    private apiServices: ConductoresService,
+    private firestore: FirestoreService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    console.log(this.getId)
+    const conductorId = this.route.snapshot.paramMap.get('id');
+    if(conductorId){
+      this.getConductor(conductorId)
+    }
   }
   ionViewWillEnter(){
-    this.getConductor(this.getId())
+    //this.getConductor(this.getId())
   }
 
   getId(){
     let url = this.router.url
     let aux = url.split("/", 3)
-    let id = parseInt(aux[2])
+    let id = aux[2]
     return id
   }
 
-  getConductor(id: Number){
-    this.apiServices.getConductores(id).subscribe((resp:any) => {
+  getConductor(id: string){
+    /*this.apiServices.getConductores(id).subscribe((resp:any) => {
       this.conductor = {
         id: resp[0].id,
         nombre: resp[0].nombre,
         genero: resp[0].genero
       }
-    })
+    })*/
+    const conductorId = this.route.snapshot.paramMap.get('id');
+
+    if(conductorId){
+      this.firestore.getConductorById('conductor', conductorId).subscribe((conductor) =>{
+        this.conductor = conductor || {} as IConductor;
+        this.conductor.id = conductorId;
+      });
+    }
   }
 
   updateConductor(){
@@ -65,8 +78,12 @@ export class UpdatePage implements OnInit {
           title: 'Conductor Editado',
           heightAuto: false,
         })
-        this.apiServices.updateConductores(this.conductor).subscribe();
-        this.router.navigate(['/apilist'])
+        /*this.apiServices.updateConductores(this.conductor).subscribe();*/
+        const conductorId = this.route.snapshot.paramMap.get('id');
+        if(conductorId){
+          this.firestore.updateDocument('conductor', conductorId, this.conductor);
+          this.router.navigate(['/apilist'])
+        }
       }
     });
   }

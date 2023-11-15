@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { IConductor } from 'src/app/interfaces/iconductor';
 import { ConductoresService } from 'src/app/services/api/conductores.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,14 +19,19 @@ export class AddPage implements OnInit {
 
 
 
-  constructor(private apiServices: ConductoresService, private router: Router) { }
+  constructor(
+    /*private apiServices: ConductoresService*/  
+    private firestore: FirestoreService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
 
   }
 
   addConductor(){  
-    this.apiServices.addConductores(this.conductor).subscribe()
+    /*this.apiServices.addConductores(this.conductor).subscribe()*/
+    this.firestore.createDocument('conductor', this.conductor);
     this.router.navigate(['/apilist']);  
     this.MensajeToast();
   }

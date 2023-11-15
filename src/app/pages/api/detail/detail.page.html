@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content >
-  <ion-card>
+  <ion-card *ngIf="conductor">
     <img alt="Silhouette of mountains" src="" />
     <ion-card-header>
       <ion-card-title> {{ conductor.nombre }}</ion-card-title>
@@ -22,7 +22,7 @@
       <br>
       <br>
       <br>
-      <ion-button [routerLink]="['/apiupdate', conductor.id]">Editar</ion-button>
+      <ion-button *ngIf="conductor" [routerLink]="['/apiupdate', conductor.id]">Editar</ion-button>
       <ion-button color="danger" (click)="deleteConductor()">Eliminar</ion-button>
     </ion-card-content>
   </ion-card>
