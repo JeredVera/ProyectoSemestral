@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/firebase/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private AuthService: AuthService) {}
   
 
   ngOnInit() {
@@ -24,5 +25,10 @@ export class HomePage implements OnInit {
 
   codigo_qr(){
     this.router.navigate(['codigo-qr'])
+  }
+
+  logout(){
+    this.AuthService.logout();
+    this.router.navigate(['login']);
   }
 }

@@ -8,30 +8,45 @@
 </ion-header>
 
 <ion-content>
-  <div class="centrado_arriba">
-    <h1>Registrate</h1>
-  </div>
 
-  <div class="container">
-    <ion-item>
-      <ion-input type="string" label="Nombre de Usuario" labelPlacement="floating" placeholder="EJ: Janoski"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="email" errorText="Invalid email"  label="Correo Electronico" labelPlacement="floating" placeholder="EJ: janoski@gmail.com"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" label="Contraseña" labelPlacement="floating" placeholder="EJ: Janoski123"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" label="Repetir Contraseña" labelPlacement="floating" placeholder="EJ: Janoski123"></ion-input>
-    </ion-item>
+  <ion-card color="black">
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+    </ion-card-header>
 
-    <div (click)="transferUsers()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
+    <ion-card-content>
+      <form [formGroup]="registerForm">
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input #user [(ngModel)]="emailValue" type="email" formControlName="email"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input #pass [(ngModel)]="passValue" type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cliente</ion-label>
+          <ion-checkbox [(ngModel)]="checkbox1Checked" formControlName="cliente" (ionChange)="check(1)"></ion-checkbox>
+          <ion-label>Conductor</ion-label>
+          <ion-checkbox [(ngModel)]="checkbox2Checked" formControlName="conductor" (ionChange)="check(2)"></ion-checkbox>
+        </ion-item>
+      </form>
+    </ion-card-content>
+
+    <div (click)="register()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
       Registrarse
       <ion-ripple-effect></ion-ripple-effect>
     </div>
 
+    <div (click)="transferUsers()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
+      Registrar Usuarios
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+
     <div class="centrado">¿Ya Tienes Cuenta?<a (click)="login()">Inicia Sesion</a></div>
+    
+    <br>
 
     <table *ngIf="Usuarios.length > 0">
       <thead>
@@ -50,7 +65,7 @@
       </tbody>
     </table>
 
-  </div>
+  </ion-card>
   
   
 </ion-content>
