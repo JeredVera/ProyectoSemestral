@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import Swal from 'sweetalert2';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-terminos',
@@ -9,10 +10,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./terminos.page.scss'],
 })
 export class TerminosPage implements OnInit {
-
+  langs: string[] = [];
+  idioma!: string;
   check: boolean = false ;
 
-  constructor(private router: Router, private menu: MenuController) { }
+  constructor(private router: Router, private menu: MenuController, private transService: TranslateService) { 
+    this.langs = this.transService.getLangs();
+  }
 
   ngOnInit() {
   }
@@ -39,5 +43,8 @@ export class TerminosPage implements OnInit {
       title: 'Debe aceptar los terminos para continuar',
       heightAuto: false,
     })
+  }
+  changeLangs(event:any){
+    this.transService.use(event.detail.value);
   }
 }

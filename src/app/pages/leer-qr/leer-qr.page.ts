@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-leer-qr',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leer-qr.page.scss'],
 })
 export class LeerQrPage implements OnInit {
-
-  constructor() { }
+  code: any;
+  constructor(private barcodeScanner: BarcodeScanner) { }
 
   ngOnInit() {
   }
-
+  scan(){
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.code = barcodeData.text;
+      console.log('Barcode data', this.code);
+     }).catch(err => {
+         console.log('Error', err);
+     });
+  }
 }

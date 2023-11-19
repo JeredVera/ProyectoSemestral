@@ -7,10 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="container margen_pequeño">
-    <h3>Escanea el Codigo QR</h3>
-
-    <img src="https://play-lh.googleusercontent.com/tsgHqF6RYjzqI1LrDMtKS4Zl-bELN4wJrWLyALZ5WbCsI5QuMZewjLNG8KGp09OrwVM" alt="">
-  </div>
+<ion-content>
+   <ion-button (click)="scan()">escanear qr</ion-button>
+   {{code}}
 </ion-content>

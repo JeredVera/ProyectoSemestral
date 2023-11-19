@@ -7,38 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content >
+
+  <ion-item>
+    <ion-label>{{"selecciona" | translate}}</ion-label>
+    <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)">
+      <ion-select-option *ngFor="let lang of langs">{{lang}}</ion-select-option>
+    </ion-select>
+  </ion-item>
   <div class="container margen_pequeño">
-    <h1>Términos y Condiciones de Uso</h1>
+    
+
+    <h1>{{"Términos y Condiciones de Uso" | translate}}</h1>
   
-    <h2>Aceptación de los Términos</h2>
-    <p>Al acceder y utilizar esta aplicación, aceptas los siguientes términos y condiciones de uso. Si no estás de acuerdo con estos términos, por favor, no utilices la aplicación.</p>
+    <h2>{{"Aceptación de los Términos" | translate}}</h2>
+    <h2>{{"Privacidad" | translate}}</h2>
+    <p>{{"Nuestra política de privacidad describe cómo recopilamos, utilizamos y protegemos tu información personal. Al utilizar la aplicación, aceptas nuestras prácticas de privacidad que se describen en la política de privacidad." |translate}}</p>
 
-    <h2>Uso Autorizado</h2>
-    <p>Esta aplicación está destinada a ser utilizada de acuerdo con todas las leyes y regulaciones aplicables. Te comprometes a utilizar la aplicación de manera responsable y ética.</p>
-
-    <h2>Privacidad</h2>
-    <p>Nuestra política de privacidad describe cómo recopilamos, utilizamos y protegemos tu información personal. Al utilizar la aplicación, aceptas nuestras prácticas de privacidad que se describen en la política de privacidad.</p>
-
-    <h2>Contenido y Propiedad Intelectual</h2>
-    <p>El contenido de esta aplicación, incluyendo texto, imágenes, logotipos y otros materiales, están protegidos por derechos de autor y otras leyes de propiedad intelectual. No puedes copiar, modificar, distribuir o utilizar este contenido sin permiso.</p>
-
-    <h2>Limitación de Responsabilidad</h2>
-    <p>No garantizamos la disponibilidad continua de la aplicación ni la precisión de su contenido. No seremos responsables por daños o pérdidas derivadas del uso de la aplicación.</p>
-
-    <h2>Modificaciones a los Términos</h2>
-    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Te recomendamos revisar periódicamente estos términos para estar al tanto de las actualizaciones.</p>
-
-    <h2>Contacto</h2>
-    <p>Si tienes alguna pregunta o inquietud sobre estos términos y condiciones, puedes ponerte en contacto con nosotros en la siguiente dirección de correo electrónico: [correo electrónico de contacto].</p>
-
-    <p>Gracias por utilizar nuestra aplicación y por leer nuestros términos y condiciones de uso.</p>
+   
+   
+   
+    <p>{{"Gracias por utilizar nuestra aplicación y por leer nuestros términos y condiciones de uso." |translate}}</p>
     </div>
 
     <br>
 
-    <ion-checkbox class="margen_pequeño" [(ngModel)]="check">Acepta teminos y condiciones</ion-checkbox>
+    <ion-checkbox class="margen_pequeño" [(ngModel)]="check">{{"Acepta teminos y condiciones" |translate}}</ion-checkbox>
 
     <br>
-    
+    <br><br><br><br><br><br><br><br>
 </ion-content>

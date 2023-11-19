@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { TranslateService} from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -31,7 +33,10 @@ export class AppComponent {
   ];
   public labels = [''];
 
-  constructor(private router: Router, menuController: MenuController) {}
+  constructor(private router: Router, menuController: MenuController, private transService: TranslateService) {
+    this.transService.setDefaultLang('fr');
+    this.transService.addLangs(['es','en']);
+  }
 
   mostrarMenu(){
     return this.router.url !== '/login'; // NO SE VA A MOSTRAR EN EL LOGIN 
