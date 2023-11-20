@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -7,7 +8,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private auth: AngularFireAuth, private router: Router) { }
+  constructor(
+    private firestore: AngularFirestore,
+    private auth: AngularFireAuth, 
+    private router: Router
+  ) { }
 
   async login(email: string, pass: string){
     try {
@@ -24,8 +29,15 @@ export class AuthService {
   async register(email: string, pass: string, isCliente: boolean, isConductor: boolean){
     try {
       const user = await this.auth.createUserWithEmailAndPassword(email,pass);
-      await this.actualizarPerfilUsuario(user, { isCliente, isConductor });
-      this.login(email,pass);
+      if(isCliente === true){
+        await this.agregarCliente(user, { isCliente, isConductor });
+        this.login(email,pass);
+      }
+      if(isConductor === true){
+        await this.agregarConductor(user, { isCliente, isConductor });
+        this.login(email,pass);
+      }
+      //this.login(email,pass);
       console.log(user); 
     } catch (error) {
       console.error('Error en register: ', error);
@@ -51,14 +63,36 @@ export class AuthService {
     });
   }
 
-  private async actualizarPerfilUsuario(user: any, additionalInfo: any) {
+  private async agregarCliente(user: any, additionalInfo: any) {
     try {
-      // Actualiza el perfil del usuario con la información adicional
-      await user.updateProfile(additionalInfo);
+      const data = { user, additionalInfo };
       
-      // Puedes realizar otras acciones aquí según tus necesidades, como almacenar información en tu base de datos
-    } catch (error) {
-      console.error('Error al actualizar el perfil del usuario: ', error);
+      // Verificar que los datos sean serializables
+      const serializableData = JSON.parse(JSON.stringify(data));
+  
+      return await this.firestore.collection('isCliente').add(serializableData);
+    } catch (error: any) {
+      console.error('Error al actualizar el perfil del Cliente: ', error);
+  
+      // Manejar el error
+      throw new Error('Error al actualizar el perfil del Cliente: ' + (error.message || ''));
+    }
+  }
+  
+
+  private async agregarConductor(user: any, additionalInfo: any) {
+    try {
+      const data = { user, additionalInfo };
+      
+      // Verificar que los datos sean serializables
+      const serializableData = JSON.parse(JSON.stringify(data));
+  
+      return await this.firestore.collection('isConductor').add(serializableData);
+    } catch (error: any) {
+      console.error('Error al actualizar el perfil del Cliente: ', error);
+  
+      // Manejar el error
+      throw new Error('Error al actualizar el perfil del Cliente: ' + (error.message || ''));
     }
   }
 }
