@@ -13,6 +13,9 @@
 
     <ion-card-content>
       <form [formGroup]="loginForm">
+        <ion-item class="centrado_arriba ">
+          <img src="https://play-lh.googleusercontent.com/fF_n9sC1yZSz6B1IL8hrF5anczp_IQayayzdd6cWOD7gd09awRtUiXtC-KmhbjU0xx0" alt="">
+        </ion-item>
         <ion-item>
           <ion-label position="floating">{{"Correo Electronico" | translate}}</ion-label>
           <ion-input #user [(ngModel)]="emailValue" type="email" formControlName="email"></ion-input>
