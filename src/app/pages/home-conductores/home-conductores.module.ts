@@ -8,13 +8,15 @@ import { HomeConductoresPageRoutingModule } from './home-conductores-routing.mod
 
 import { HomeConductoresPage } from './home-conductores.page';
 import { CardClienteComponent } from 'src/app/components/card-cliente/card-cliente.component';
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeConductoresPageRoutingModule
+    HomeConductoresPageRoutingModule,
+    TranslateModule
   ],
   declarations: [HomeConductoresPage, CardClienteComponent]
 })

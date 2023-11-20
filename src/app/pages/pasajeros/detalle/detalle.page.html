@@ -19,14 +19,14 @@
     </ion-card-header>
   
     <ion-card-content>
-      <ion-card-subtitle >{{ pasajero.edad }} años</ion-card-subtitle>
+      <ion-card-subtitle >{{ pasajero.edad }} {{"años" | translate}}</ion-card-subtitle>
       {{ pasajero.descripcion }}
       <hr>
       <ion-label>
-        <h2>Telefono</h2>
+        <h2>{{"Numero de Telefono" | translate}}</h2>
         <p>{{ pasajero.telefono}}</p>
       </ion-label>
     </ion-card-content>
-    <ion-button shape="round" class="centrado" >Confirmar Viaje</ion-button>
+    <ion-button shape="round" class="centrado" >{{"Confirmar Viaje" | translate}}</ion-button>
   </ion-card>
 </ion-content>

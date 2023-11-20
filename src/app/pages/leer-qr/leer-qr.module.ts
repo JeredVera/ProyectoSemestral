@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LeerQrPageRoutingModule } from './leer-qr-routing.module';
 
 import { LeerQrPage } from './leer-qr.page';
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LeerQrPageRoutingModule
+    LeerQrPageRoutingModule,
+    TranslateModule
   ],
   declarations: [LeerQrPage]
 })

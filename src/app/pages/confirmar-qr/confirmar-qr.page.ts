@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirmar-qr',
@@ -7,8 +8,12 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
   styleUrls: ['./confirmar-qr.page.scss'],
 })
 export class ConfirmarQrPage implements OnInit {
+  langs: string[] = [];
 
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor(private barcodeScanner: BarcodeScanner,private transService: TranslateService) { 
+    this.langs = this.transService.getLangs();
+
+  }
 
   ngOnInit() {
   }

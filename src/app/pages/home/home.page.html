@@ -17,7 +17,7 @@
   <div class="container border">
     <div style="margin: 10%; ">
       <h4>{{"¿Que somos?" | translate }}</h4>
-      <h6>Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte.</h6>
+      <h6>{{"Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte." | translate}}</h6>
     </div>
   </div>
 
@@ -25,10 +25,10 @@
 
   <div class="container  border">
     <div class="centrado_arriba">
-      <h4>¡Pide Tu Uber Aqui!</h4>
+      <h4>{{"¡Pide Tu Uber Aqui!" | translate}}</h4>
     </div>
     <div (click)="conductores()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
-      Pedir Uber
+      {{"Pedir Uber" | translate}}
       <ion-ripple-effect></ion-ripple-effect>
     </div>
   </div>
@@ -37,7 +37,7 @@
 
   <div class="container  border">
     <div class="centrado_arriba">
-      <h4>Conductores Favoritos</h4>
+      <h4>{{"Conductores Favoritos" | translate}}</h4>
     </div>
     <app-card [mostrarHeader]="true" [mostrarBoton]="false" imagen="https://pbs.twimg.com/media/ERpKCF5WsAESUA-.jpg" nombre="Juan" edad="20" descripcion="Ingenieria Informatica, Horario Diurno, Destino Bajos de Mena"></app-card>
     <br>
@@ -48,7 +48,7 @@
   <br>
   <br>
 
-  <ion-button (click)="logout()">Cerrar Sesion</ion-button>
+  <ion-button (click)="logout()">{{"Cerrar Sesion" | translate}}</ion-button>
 
 <br><br><br><br><br><br>
   <ion-fab slot="fixed" vertical="bottom" horizontal="start">

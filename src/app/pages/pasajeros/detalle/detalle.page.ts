@@ -3,6 +3,7 @@ import { Pasajero } from '../pasajeros.model';
 import { PasajerosService } from 'src/app/services/pasajeros.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detalle',
@@ -10,10 +11,14 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage implements OnInit {
+  langs: string[] = [];
 
   pasajero!: Pasajero;
 
-  constructor(private alertController: AlertController,private toastController: ToastController,private pasajerosService: PasajerosService, private router: Router, private activatedRoute: ActivatedRoute ) { }
+  constructor(private alertController: AlertController,private toastController: ToastController,private pasajerosService: PasajerosService, private router: Router, private activatedRoute: ActivatedRoute,private transService: TranslateService ) { 
+    this.langs = this.transService.getLangs();
+
+  }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(param =>{

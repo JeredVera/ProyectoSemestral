@@ -81,10 +81,7 @@ const routes: Routes = [
     path: 'message',
     loadChildren: () => import('./pages/message/message.module').then( m => m.MessagePageModule)
   },
-  {
-    path: 'privacidad',
-    loadChildren: () => import('./pages/privacidad/privacidad.module').then( m => m.PrivacidadPageModule)
-  },
+  
   {
     path: 'terminos',
     loadChildren: () => import('./pages/terminos/terminos.module').then( m => m.TerminosPageModule)

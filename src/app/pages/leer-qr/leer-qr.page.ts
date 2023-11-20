@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-leer-qr',
@@ -8,7 +9,11 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class LeerQrPage implements OnInit {
   code: any;
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  langs: string[] = [];
+
+  constructor(private barcodeScanner: BarcodeScanner, private transService: TranslateService) { 
+    this.langs = this.transService.getLangs();
+  }
 
   ngOnInit() {
   }

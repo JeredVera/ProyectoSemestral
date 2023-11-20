@@ -1,5 +1,7 @@
 {
     "selecciona" : "select",
+    "seleccione idioma":"seleccione idioma",
+
     "Términos y Condiciones de Uso" : "Términos y Condiciones de Uso",
     "Aceptación de los Términos" : "Aceptación de los Términos",
     "Al acceder y utilizar esta aplicación, aceptas los siguientes términos y condiciones de uso. Si no estás de acuerdo con estos términos, por favor, no utilices la aplicación" : "Al acceder y utilizar esta aplicación, aceptas los siguientes términos y condiciones de uso. Si no estás de acuerdo con estos términos, por favor, no utilices la aplicación",
@@ -11,6 +13,40 @@
 
 
     "¿Que somos?":"¿Que somos?",
-    "Bienvenido Cliente":"Bienvenido Cliente"
+    "Bienvenido Cliente":"Bienvenido Cliente",
+    "Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte.":"",
+    "¡Pide Tu Uber Aqui!":"¡Pide Tu Uber Aqui!",
+    "Pedir Uber":"Pedir Uber",
+    "Conductores Favoritos":"Conductores Favoritos",
+    "Cerrar Sesion":"Cerrar Sesion",
+    "conductores preferidos":"conductores preferidos",
+    "años":"años",
+    "Codigo generado":"Codigo generado",
+    "Cliente":"Cliente",
+    "Informacion Basica":"Informacion Basica",
+    "Nombre":"Nombre",
+    "Correo Electronico":"Correo Electronico",
+    "Numero de Telefono":"Numero de Telefono",
+    "Pasajeros disponibles":"Pasajeros disponibles",
+    "Ver mas":"Ver mas",
+    "Cliente Frecuentes":"Cliente Frecuentes",
+    "escanear qr":"escanear qr",
+    "Iniciar Sesión":"Iniciar Sesión",
+    "¿No Tienes Cuenta?":"¿No Tienes Cuenta?",
+    "¿Olvidaste Tu Contraseña?":"¿Olvidaste Tu Contraseña?",
+    "Contraseña":"Contraseña",
+    "Registrate":"Registrate",
+    "Recuperar":"Recuperar",
+    "Confirmar Viaje":"Confirmar Viaje",
+    "Restablece tu Contraseña":"Restablece tu Contraseña",
+    "Buscar":"Buscar",
+    "Registro":"Registro",
+    "Conductor":"Conductor",
+    "Registrar Usuarios":"Registrar Usuarios",
+    "":"",
+    "":"",
+    "":""
+
+
 
 }

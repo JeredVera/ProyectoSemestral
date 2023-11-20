@@ -1,6 +1,7 @@
 {
     "selecciona" : "select",
-    "Términos y Condiciones de Uso" : "Términos y Condiciones de Uso",
+    "seleccione idioma":"seleccione idioma",
+    "Términos y Condiciones de Uso" : "Terms and conditions of use",
     "Aceptación de los Términos" : "Acceptance of Terms",
     "Al acceder y utilizar esta aplicación, aceptas los siguientes términos y condiciones de uso. Si no estás de acuerdo con estos términos, por favor, no utilices la aplicación" : "By accessing and using this application, you agree to the following terms and conditions of use. If you do not agree to these terms, please do not use the application",
     "Privacidad" : "Privacity",
@@ -10,6 +11,38 @@
 
 
     "¿Que somos?":"What are we?",
-    "Bienvenido Cliente":"Bienvenido Cliente"
+    "Bienvenido Cliente":"Welcome",
+    "Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte.":"Application dedicated to Duoc students who do not have means of transportation.",
+    "¡Pide Tu Uber Aqui!":"Request Your Uber Here!",
+    "Pedir Uber":"Order Uber",
+    "Conductores Favoritos":"Favorite Drivers",
+    "Cerrar Sesion":"logout",
+    "conductores preferidos":"preferred drivers",
+    "años":"Years old",
+    "Codigo generado":"Generated code",
+    "Cliente":"Customer",
+    "Informacion Basica":"Basic information",
+    "Nombre":"Name",
+    "Correo Electronico":"Email",
+    "Numero de Telefono":"Phone number",
+    "Pasajeros disponibles":"Available passengers",
+    "Ver mas":"See more",
+    "Cliente Frecuentes":"Frequent Clients",
+    "escanear qr":"scanner qr",
+    "Iniciar Sesión":"Log in",
+    "¿No Tienes Cuenta?":"You do not have an account?",
+    "¿Olvidaste Tu Contraseña?":"Did you forget your password?",
+    "Contraseña":"Password",
+    "Registrate":"Sign up",
+    "Recuperar":"Recover",
+    "Confirmar Viaje":"Confirm Trip",
+    "Restablece tu Contraseña":"Reset your Password",
+    "Buscar":"Search",
+    "Registro":"register",
+    "Conductor":"Driver",
+    "Registrar Usuarios":"Register Users",
+    "":"",
+    "":"",
+    "":""
 
 }

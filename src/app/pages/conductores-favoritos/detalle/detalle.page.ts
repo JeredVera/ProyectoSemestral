@@ -3,6 +3,7 @@ import { Conductor_Favorito } from '../conductores-favoritos.model';
 import { ConductoresFavoritosService } from 'src/app/services/conductores-favoritos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detalle',
@@ -10,10 +11,14 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage implements OnInit {
+  langs: string[] = [];
 
   conductores_favoritos! : Conductor_Favorito;
 
-  constructor(private toastController: ToastController,private alertController: AlertController,private conductoresFavoritosService: ConductoresFavoritosService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private toastController: ToastController,private alertController: AlertController,private conductoresFavoritosService: ConductoresFavoritosService, private router: Router, private activatedRoute: ActivatedRoute,private transService: TranslateService) { 
+    this.langs = this.transService.getLangs();
+
+  }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(param =>{

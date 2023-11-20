@@ -6,6 +6,7 @@ import { AuthServiceService } from 'src/app/services/auth.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
 import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
 import Swal from 'sweetalert2';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,14 @@ import Swal from 'sweetalert2';
 })
 
 export class LoginPage implements OnInit { 
+  langs: string[] = [];
 
   loginForm: FormGroup;
   emailValue?: string;
   passValue?:  string;
 
 
-  constructor(
+  constructor( private transService: TranslateService,
     private router: Router, 
     private navCtrl: NavController, 
     private usuariosrandom: UsuariosrandomService, 
@@ -32,6 +34,8 @@ export class LoginPage implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    this.langs = this.transService.getLangs();
+
   }
 
 

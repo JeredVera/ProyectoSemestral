@@ -16,8 +16,8 @@
   
   <div class="container border">
     <div style="margin: 10%; ">
-      <h4>¿Que somos?</h4>
-      <h6>Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte.</h6>
+      <h4>{{"¿Que somos?" | translate}}</h4>
+      <h6>{{"Aplicacion dedicada a alumnos de Duoc que no cuentan con medios de transporte." | translate}}</h6>
     </div>
   </div>
 
@@ -25,10 +25,10 @@
 
   <div class="container border">
     <div class="centrado_arriba">
-      <h4>Pasajeros disponibles</h4>
+      <h4>{{"Pasajeros disponibles" | translate}}</h4>
     </div>
     <div (click)="pasajeros()" class="ion-activatable ripple-parent custom-parent centrado_arriba">
-      Ver mas
+      {{"Ver mas" | translate}}
       <ion-ripple-effect></ion-ripple-effect>
     </div>
   </div>
@@ -37,7 +37,7 @@
 
   <div class="container  border">
     <div class="centrado_arriba">
-      <h4>Cliente Frecuentes</h4>
+      <h4>{{"Cliente Frecuentes"| translate}}</h4>
     </div>
     <app-card-cliente [mostrarHeader]="true" [mostrarBoton]="false" imagen="https://caracol.com.co/resizer/xE2xxy1zy4o2Ow8O4rzKMHnT2o4=/650x488/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/JXFOEJKH7BITNDYTJXS2UQ3F2I.jpg" direccion="Eyzaguirre 0234" nombre="Vicente" edad="18" descripcion="Preparador Fisico" telefono="+56 9 87459851"></app-card-cliente>
     <br>

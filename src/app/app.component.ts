@@ -11,7 +11,6 @@ import { TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   public appPages = [
     { title: 'Cuenta', url: 'cuenta', icon: 'person' },
-    { title: 'Privacidad y Seguridad', url: 'privacidad', icon: 'lock-closed' },
     { title: 'Mensajes', url: 'message', icon: 'card' },
     { title: 'Codigo QR', url: 'codigo-qr', icon: 'qr-code' },
     { title: 'Leer Codigo QR', url: 'leer-qr', icon: 'qr-code' },

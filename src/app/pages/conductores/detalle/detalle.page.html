@@ -12,12 +12,12 @@
     <img alt="Silhouette of mountains" src="{{ conductor.imagen }}" />
     <ion-card-header>
       <ion-card-title>{{ conductor.nombre }}</ion-card-title>
-      <ion-card-subtitle>{{ conductor.edad }} años</ion-card-subtitle>
+      <ion-card-subtitle>{{ conductor.edad }} {{"años" | translate}}</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       {{ conductor.descripcion }}
     </ion-card-content>
-    <ion-button (click)="llamar()" shape="round" class="centrado" >Pedir Uber</ion-button>
+    <ion-button (click)="llamar()" shape="round" class="centrado" >{{"Pedir Uber" | translate}}</ion-button>
   </ion-card>
 </ion-content>

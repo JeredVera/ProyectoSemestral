@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ConfirmarQrPageRoutingModule } from './confirmar-qr-routing.module';
 
 import { ConfirmarQrPage } from './confirmar-qr.page';
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConfirmarQrPageRoutingModule
+    ConfirmarQrPageRoutingModule,
+    TranslateModule
   ],
   declarations: [ConfirmarQrPage]
 })

@@ -6,6 +6,7 @@ import { ClienteService } from 'src/app/services/api/cliente.service';
 import { UserService } from 'src/app/services/api/user.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
 import Swal from 'sweetalert2';
+import { TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  
+  langs: string[] = [];
+
   Usuarios: IUsuario[] = [];
   emailValue?: string;
   passValue?:  string;
@@ -26,7 +28,8 @@ export class RegisterPage implements OnInit {
     private userService: UserService, 
     private clienteService: ClienteService,
     private AuthService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private transService: TranslateService
     ) {
       this.registerForm = this.formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
@@ -34,6 +37,8 @@ export class RegisterPage implements OnInit {
         cliente: [false], // Agregamos un control para el checkbox de cliente
         conductor: [false], // Agregamos un control para el checkbox de conductor
       });
+      this.langs = this.transService.getLangs();
+
      }
 
   ngOnInit() {
