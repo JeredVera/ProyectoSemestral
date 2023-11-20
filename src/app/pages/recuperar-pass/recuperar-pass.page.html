@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
     <ion-title>Restore</ion-title>
   </ion-toolbar>
@@ -14,10 +14,10 @@
   <br>
   
   <ion-item>
-    <ion-input type="string" errorText="Invalido Nombre Usuario" ngModel label="Nombre de Usuario" labelPlacement="floating" placeholder="EJ: Janoski"></ion-input>
+    <ion-input type="email" [(ngModel)]="email" label="email" labelPlacement="floating" placeholder="EJ: Janoski@gmail.com"></ion-input>
   </ion-item>
 
-  <div class="ion-activatable ripple-parent custom-parent centrado_arriba">
+  <div class="ion-activatable ripple-parent custom-parent centrado_arriba" (click)="resetPassword()">
     {{"Buscar" | translate}}
     <ion-ripple-effect></ion-ripple-effect>
   </div>

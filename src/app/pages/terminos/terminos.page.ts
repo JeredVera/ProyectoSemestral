@@ -44,6 +44,7 @@ export class TerminosPage implements OnInit {
       heightAuto: false,
     })
   }
+  
   changeLangs(event:any){
     this.transService.use(event.detail.value);
   }

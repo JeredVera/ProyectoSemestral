@@ -95,8 +95,6 @@ export class LoginPage implements OnInit {
   }
 
 
-
-
   MensajeToast(){
     const Toast = Swal.mixin({
       toast: true,
