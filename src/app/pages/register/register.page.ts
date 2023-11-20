@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/api/user.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
 import Swal from 'sweetalert2';
 import { TranslateService} from '@ngx-translate/core';
+import { UsuariosrandomService } from 'src/app/services/firebase/usuariosrandom.service';
 
 @Component({
   selector: 'app-register',
@@ -29,7 +30,8 @@ export class RegisterPage implements OnInit {
     private clienteService: ClienteService,
     private AuthService: AuthService,
     private formBuilder: FormBuilder,
-    private transService: TranslateService
+    private transService: TranslateService,
+    private usuariosrandom: UsuariosrandomService
     ) {
       this.registerForm = this.formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
@@ -57,8 +59,10 @@ export class RegisterPage implements OnInit {
   }
 
   transferUsers() {
-    this.userService.transferUsersToRenderAPI();
-    this.clienteService.transferUsersToRenderAPI();
+    //this.userService.transferUsersToRenderAPI();
+    //this.clienteService.transferUsersToRenderAPI();
+    this.usuariosrandom.addRandomClienteToFirebase(10);
+    this.usuariosrandom.addRandomConductorToFirebase(10);
   }
 
   check(checkboxNumero: number){

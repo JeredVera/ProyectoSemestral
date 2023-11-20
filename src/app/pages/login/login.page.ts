@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { AuthServiceService } from 'src/app/services/auth.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
-import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
+import { UsuariosrandomService } from 'src/app/services/firebase/usuariosrandom.service';
 import Swal from 'sweetalert2';
 import { TranslateService} from '@ngx-translate/core';
 
