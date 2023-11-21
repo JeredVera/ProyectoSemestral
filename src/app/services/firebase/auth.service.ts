@@ -19,7 +19,7 @@ export class AuthService {
     try {
       const user = await this.auth.signInWithEmailAndPassword(email,pass);
       if(user){
-        this.router.navigate(['home']);
+        this.router.navigate(['home-conductores']);
       }
       console.log(user); 
     } catch (error) {
