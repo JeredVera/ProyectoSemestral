@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import validator from 'validator';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,7 @@ export class AuthService {
     try {
       const user = await this.auth.signInWithEmailAndPassword(email,pass);
       if(user){
-        this.router.navigate(['home-conductores']);
+        this.router.navigate(['home']);
       }
       console.log(user); 
     } catch (error) {
