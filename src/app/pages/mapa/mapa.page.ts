@@ -49,7 +49,7 @@ export class MapaPage implements OnInit {
   generarViaje() {
     // Obtener los lugares seleccionados del buscador (aquí deberías tener lógica para obtener esos lugares)
     const startPoint = L.latLng(-33.59848740405084, -70.57911988858959);
-    const destinationPoint = L.latLng(-33.5691535,  -70.556041);
+    const destinationPoint = L.latLng(-33.5691535, -70.556041);
 
     // Actualizar los waypoints del control de enrutamiento con los puntos seleccionados
     this.routingControl.setWaypoints([startPoint, destinationPoint]);

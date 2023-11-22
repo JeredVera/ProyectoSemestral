@@ -12,7 +12,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
-import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 
@@ -34,7 +33,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
     })
   ],
   providers: [
-    BarcodeScanner,
+   
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
