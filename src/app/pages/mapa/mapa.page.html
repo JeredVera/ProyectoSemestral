@@ -1,18 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header>
+
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Map</ion-title>
+    <ion-input [(ngModel)]="origenInput" placeholder="Origen"></ion-input>
+    <ion-input [(ngModel)]="destinoInput" placeholder="Destino"></ion-input>
   </ion-toolbar>
 </ion-header>
 
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
 <ion-content [fullscreen]="true">
-  <h4></h4>
-  <div id="map" ></div>
+<h4></h4>
+<div id="map" style="height: 400px;"></div>
 <ion-button expand="block" (click)="generarViaje()">Generar Viaje</ion-button>
 </ion-content>
+
+
+
