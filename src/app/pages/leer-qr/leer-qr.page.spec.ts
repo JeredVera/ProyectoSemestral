@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LeerQrPage } from './leer-qr.page';
+import { LeerQrPage } from './LeerQrPage';
 
 describe('LeerQrPage', () => {
   let component: LeerQrPage;

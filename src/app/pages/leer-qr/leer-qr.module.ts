@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { LeerQrPageRoutingModule } from './leer-qr-routing.module';
 
-import { LeerQrPage } from './leer-qr.page';
+import { LeerQrPage } from './LeerQrPage';
 import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({

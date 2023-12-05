@@ -8,6 +8,13 @@
 </ion-header>
 
 <ion-content>
-   <ion-button >{{"escanear qr" | translate}}</ion-button>
-   
+  <h3>Leer codigo QR</h3>
+  <p>con la lectura del codigo QR podras aceptar el viaje de cada conductor</p>
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="addPhotoToGallery()">
+    <ion-icon name='camera'></ion-icon>
+    </ion-fab-button>
+
+</ion-fab>   
 </ion-content>
+<br><br><br><br>
